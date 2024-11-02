@@ -70,6 +70,7 @@ return [
     */
 
     'timezone' => 'Africa/Cairo',
+    'currency' => 'USD',
 
     /*
     |--------------------------------------------------------------------------
@@ -108,7 +109,8 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    // 'faker_locale' => 'en_US',
+    'faker_locale' => 'ar_SA',
 
     /*
     |--------------------------------------------------------------------------
@@ -163,6 +165,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        
 
         /*
          * Package Service Providers...
@@ -176,6 +179,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\CartServicsProvider::class,
 
     ],
 
@@ -191,7 +195,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // ...
+        'currency' => App\Helpers\Currency::class,
     ])->toArray(),
 
 ];
